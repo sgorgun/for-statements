@@ -276,7 +276,9 @@ Open the [QuadraticSequences.cs](ForStatements/QuadraticSequences.cs) file, and 
 
 Implement the method that returns the product of the first _count_ quadratic sequence terms.
 
-For the quadratic sequence $`\{ 13, 38, 77, 130, ...\}`$ the product is 494 (13 * 38 = 494), if the _count_ is 2. If the _count_ is 3, the product is 38038 (13 * 38 * 77 = 38038).
+The quadratic sequence with nth term $`a_{n}=7\cdot{n^2}+4\cdot{n}+2`$ is $`\{ 13, 38, 77, 130, ...\}`$.
+
+If the _count_ is 2, the product is 494 (13 * 38 = 494). If the _count_ is 3, the product is 38038 (13 * 38 * 77 = 38038).
 
 
 #### Task 8
