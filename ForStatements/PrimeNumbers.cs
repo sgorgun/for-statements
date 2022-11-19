@@ -27,12 +27,11 @@
         {
             int sum = 0;
             int n = end;
-            int i = 2;
-
             if (n > 1)
             {
                 for (; n > start; n--)
                 {
+                    int i;
                     for (i = 2; i < n; i++)
                     {
                         for (; n % i == 0; n--)
