@@ -4,20 +4,43 @@
     {
         public static int SumArithmeticSequenceTerms1(int a, int n)
         {
-            // TODO Task 1. Implement the method that returns sum of an arithmetic sequence terms.
-            throw new NotImplementedException();
+            int sum = 0;
+
+            for (int i = 0; i < n; i++)
+            {
+                sum += a + i;
+            }
+
+            return sum;
         }
 
         public static int SumArithmeticSequenceTerms2(int n)
         {
-            // TODO Task 2. Implement the method that returns sum of an arithmetic sequence terms.
-            throw new NotImplementedException();
+            const int firstTerm = 47;
+            const int commonDifference = 13;
+
+            int sum = 0;
+
+            for (int i = 0; i < n; i++)
+            {
+                sum += firstTerm + (i * commonDifference);
+            }
+
+            return sum;
         }
 
         public static int SumArithmeticSequenceTerms3(int a, int n)
         {
-            // TODO Task 3. Implement the method that returns sum of an arithmetic sequence terms.
-            throw new NotImplementedException();
+            const int commonDifference = 5;
+
+            int sum = 0;
+
+            for (int i = 0; i < n; i++)
+            {
+                sum += a + (i * commonDifference);
+            }
+
+            return sum;
         }
     }
 }

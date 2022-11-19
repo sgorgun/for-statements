@@ -1,29 +1,102 @@
-﻿namespace ForStatements
+﻿using System.Globalization;
+
+namespace ForStatements
 {
     public static class GeometricSequences
     {
         public static ulong GetGeometricSequenceTermsProduct(uint a, uint r, uint n)
         {
-            // TODO Task 11. Implement the method that returns the product of geometric sequence terms.
-            throw new NotImplementedException();
+            uint product = 1;
+            uint i = 0;
+
+            for (; i < n; i++)
+            {
+                uint rpow = 1;
+                uint j = 0;
+
+                for (; j < i; j++)
+                {
+                    rpow *= r;
+                }
+
+                product *= a * rpow;
+            }
+
+            return product;
         }
 
         public static ulong SumGeometricSequenceTerms(uint n)
         {
-            // TODO Task 12. Implement the method that returns sum of a geometric sequence terms when the first term is 5 and the common ratio is 3.
-            throw new NotImplementedException();
+            uint sum = 0;
+            uint a = 5;
+            uint r = 3;
+            uint i = 0;
+
+            for (; i < n; i++)
+            {
+                uint rpow = 1;
+                uint j = 0;
+
+                for (; j < i; j++)
+                {
+                    rpow *= r;
+                }
+
+                sum += a * rpow;
+            }
+
+            return sum;
         }
 
         public static ulong CountGeometricSequenceTerms1(uint a, uint r, uint maxTerm)
         {
-            // TODO Task 13. Implement the method that counts terms in a geometric sequence that are less than or equal to the maxTerm.
-            throw new NotImplementedException();
+            ulong term = a;
+            ulong i = 0;
+
+            for (; term <= maxTerm;)
+            {
+                i++;
+                ulong rpow = 1;
+                ulong j = 0;
+                for (; j < i; j++)
+                {
+                    rpow *= r;
+                }
+
+                term = a * rpow;
+            }
+
+            return i;
         }
 
         public static ulong CountGeometricSequenceTerms2(uint a, uint r, uint n, uint minTerm)
         {
-            // TODO Task 14. Implement the method that counts terms in a geometric sequence that are greater than or equal to a minTerm.
-            throw new NotImplementedException();
+            uint i = n - 1;
+            for (; ;)
+            {
+                uint rpow = 1;
+
+                for (uint j = 0; j < i; j++)
+                {
+                    rpow *= r;
+                }
+
+                uint term = a * rpow;
+
+                if (term < minTerm && i == n - 1)
+                {
+                    return 0;
+                }
+
+                if (term <= minTerm || i == 0)
+                {
+                    break;
+                }
+
+                i--;
+            }
+
+            return n - i;
         }
     }
 }

@@ -4,14 +4,46 @@
     {
         public static int GetFibonacciNumber(int n)
         {
-            // TODO Task 9. Implement the method that returns a Fibonacci sequence number.
-            throw new NotImplementedException();
+            int termOne = 0;
+            int termTwo = 1;
+            if (n == 0)
+            {
+                return termOne;
+            }
+
+            for (int i = 2; i <= n; i++)
+            {
+                int temp = termOne + termTwo;
+                termOne = termTwo;
+                termTwo = temp;
+            }
+
+            return termTwo;
         }
 
         public static ulong GetProductOfFibonacciNumberDigits(ulong n)
         {
-            // TODO Task 10. Implement the method that returns the product of digits of the Fibonacci sequence number.
-            throw new NotImplementedException();
+            ulong product = 1;
+            ulong termOne = 0;
+            ulong termTwo = 1;
+            if (n == 0)
+            {
+                return 0;
+            }
+
+            for (ulong i = 2; i <= n; i++)
+            {
+                ulong temp = termOne + termTwo;
+                termOne = termTwo;
+                termTwo = temp;
+            }
+
+            for (; termTwo > 0; termTwo /= 10)
+            {
+                product *= termTwo % 10;
+            }
+
+            return product;
         }
     }
 }
